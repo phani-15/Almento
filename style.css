@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Playfair+Display:wght@400;700&display=swap');
+
+/* Full Page Styling */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #1b0126; /* Default background */
+}
+
+/* Top Section (Angular Gradient) */
+.top-section {
+    width: 100%;
+    height: 40vh; /* Takes half of the screen */
+    background: conic-gradient(
+        from 266.33deg at 55.9% 117.56%, 
+        #3D014E 0deg, #0F0113 86.75deg, 
+        #2F013C 167.04deg, #25012F 254.11deg, 
+        #4B015F 287.64deg, #3D014E 360deg
+    );
+}
+
+/* Main Container (Bottom Half) */
+.main-container {
+    width: 100%;
+    height: 60vh;
+    background-color: #0F0113;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* Contact Us Text */
+.contact-us {
+    position: absolute;
+    top: 50px;
+    right: 40px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #f5f5f5;
+}
+
+/* Logo Container */
+.logo-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Glow Effect */
+.logo-glow {
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 223, 0, 0.3), rgba(0, 0, 0, 0));
+    box-shadow: 0px 0px 40px rgba(255, 223, 0, 0.7);
+    z-index: 1;
+    margin-top: 70px;
+}
+
+/* Logo Image */
+.logo {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    border: 5px solid rgba(246, 225, 92, 0.7);
+    position: relative;
+    z-index: 2;
+    margin-top: 70px;
+}
+
+/* Welcome Text */
+.welcome-text {
+    font-family: 'Garamond', serif;
+    font-size: 45px;
+    margin-top: 25px;
+    font-weight: bold;
+    color: #f5e4c3;
+    text-align: center;
+    margin-top: 0px;
+
+}
+
+/* Continue Button */
+.continue-btn {
+    font-family: 'Playfair Display', serif;
+    background: linear-gradient(to bottom, #fffbe8, #e0a800);
+    color: black;
+    font-size: 18px;
+    padding: 12px 40px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 0px 0px 15px rgba(255, 223, 0, 0.6);
+    transition: transform 0.2s, box-shadow 0.2s;
+    margin-top: 10px;
+    margin-left: 8px;
+}
+
+.continue-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 20px rgba(255, 223, 0, 0.9);
+}
