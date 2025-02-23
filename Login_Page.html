@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student & Mentor Login</title>
+    <style>
+        /* Reset default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Page styling */
+        body {
+            background-color: #0F0113;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            border: 5px solid ;
+            padding: 20px;
+        }
+
+        /* Container for cards */
+        .container {
+            display: flex;
+            gap: 80px;
+            margin-top: 50px;
+        }
+
+        /* Card styling */
+        .card {
+            background-color:#0d0a2c;
+            width: 330px;
+            padding: 30px;
+            text-align: center;
+            border-radius: 25px;
+            box-shadow: 0px 0px 20px rgba(255, 215, 0, 0.2);
+            border: 1px solid #F5E4C3;
+        }
+
+        /* Circular profile image */
+        .card img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 1px solid #F5E4C3;
+        }
+
+        /* Title styling */
+        .title {
+            margin: 75px 0;
+            font-size: 22px;
+            font-weight:linear;
+            color: rgb(244, 232, 166);
+            margin-bottom:30px;
+        }
+
+        /* Button container */
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 2s0px;
+        }
+
+        /* Button styles */
+        .btn1{
+            background:linear-gradient(to bottom,#0A043C,#0E0D0D);
+            color:#F5E4C3;
+            border:1px solid #F5E4C3;
+            padding: 8px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: 0.3s;
+            margin-bottom:15px;
+        }
+        .btn2{
+            background:linear-gradient(to bottom,#0A043C,#0E0D0D);
+            color:#F5E4C3;
+            border: 1px solid #F5E4C3;
+            padding: 8px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        /* Hover effect */
+        .btn:hover {
+            background-color: gold;
+            color: black;
+        }
+
+        /* Logo styling */
+        .logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 70px;
+            border-radius:30%;
+
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Logo -->
+    <img src="logo.jpg" alt="Logo" class="logo">
+
+    <div class="container">
+        <!-- Student Card -->
+        <div class="card">
+            <img src="student.jpg" alt="Student">
+            <div class="title">Student</div>
+            <div class="buttons">
+                <button class="btn1">Sign in</button>
+            </div>
+            <div>
+                <button class="btn2">Sign up</button>
+
+            </div>
+        </div>
+
+        <!-- Mentor Card -->
+        <div class="card">
+            <img src="mentor.jpg" alt="Mentor">
+            <div class="title">Mentor</div>
+            <div class="buttons">
+                <button class="btn1">Sign in</button>
+            </div>
+            <div>    
+                <button class="btn2">Sign up</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
