@@ -5,6 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to ALMENTO</title>
     <link rel="stylesheet" href="../Styles/Style.css">
+    <style>
+        .logo {
+            width: 150px;
+        }
+
+        .logo.animated {
+            width: 50px;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            transform: none;
+            transition: transform 0.5s ease, width 0.5s ease, position 0.5s ease, top 0.5s ease, left 0.5s ease;
+        }
+    </style>
 </head>
 <body>
     <div class="top-section">
@@ -18,7 +32,37 @@
     <div class="main-container">
         <h1 class="welcome-text">Welcome To ALMENTO</h1>
 
-        <button class="continue-btn"><a href="./LoginPage.html">Continue</a></button>
+        <button class="continue-btn" id="continueBtn"><a href="./LoginPage.html">Continue</a></button>
     </div>
+
+    <script>
+        function animateLogoAndNavigate() {
+            const logo = document.querySelector('.logo');
+            const loginPageUrl = './LoginPage.html';
+
+            if (logo) {
+                logo.classList.add('animated');
+
+                setTimeout(() => {
+                    window.location.href = loginPageUrl;
+                }, 500);
+            } else {
+                console.error('Logo element not found.');
+                window.location.href = loginPageUrl;
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const continueBtn = document.getElementById('continueBtn');
+            if (continueBtn) {
+                continueBtn.addEventListener('click', (event) => {
+                    event.preventDefault(); // Prevent default link behavior
+                    animateLogoAndNavigate();
+                });
+            } else {
+                console.error('Continue button not found.');
+            }
+        });
+    </script>
 </body>
 </html>
