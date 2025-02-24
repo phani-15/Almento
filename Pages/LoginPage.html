@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,6 +14,11 @@
             font-family: 'Poppins', sans-serif;
         }
 
+        .flexy {
+            display: flex;
+            justify-content: space-around;
+        }
+
         /* Page styling */
         body {
             background-color: #0F0113;
@@ -21,7 +27,7 @@
             align-items: center;
             height: 100vh;
             flex-direction: column;
-            border: 5px solid ;
+            border: 5px solid;
             padding: 20px;
         }
 
@@ -34,7 +40,7 @@
 
         /* Card styling */
         .card {
-            background-color:#1A0D1E;
+            background-color: #1A0D1E;
             width: 330px;
             padding: 30px;
             text-align: center;
@@ -56,9 +62,9 @@
         .title {
             margin: 75px 0;
             font-size: 22px;
-            font-weight:linear;
+            font-weight: linear;
             color: rgb(244, 232, 166);
-            margin-bottom:30px;
+            margin-bottom: 30px;
         }
 
         /* Button container */
@@ -70,20 +76,21 @@
         }
 
         /* Button styles */
-        .btn1{
-            background:linear-gradient(to bottom,#0A043C,#0E0D0D);
-            color:#F5E4C3;
-            border:1px solid #F5E4C3;
+        .btn1 {
+            background: linear-gradient(to bottom, #0A043C, #0E0D0D);
+            color: #F5E4C3;
+            border: 1px solid #F5E4C3;
             padding: 8px 20px;
             border-radius: 20px;
             cursor: pointer;
             font-size: 14px;
             transition: 0.3s;
-            margin-bottom:15px;
+            margin-bottom: 15px;
         }
-        .btn2{
-            background:linear-gradient(to bottom,#0A043C,#0E0D0D);
-            color:#F5E4C3;
+
+        .btn2 {
+            background: linear-gradient(to bottom, #0A043C, #0E0D0D);
+            color: #F5E4C3;
             border: 1px solid #F5E4C3;
             padding: 8px 20px;
             border-radius: 20px;
@@ -104,11 +111,12 @@
             top: 20px;
             left: 20px;
             width: 70px;
-            border-radius:30%;
+            border-radius: 30%;
 
         }
     </style>
 </head>
+
 <body>
 
     <!-- Logo -->
@@ -119,6 +127,7 @@
         <div class="card">
             <img src="../images/Student_Logo.jpeg" alt="Student">
             <div class="title">Student</div>
+            <div class="flexy">
             <div class="buttons">
                 <button class="btn1">Sign in</button>
             </div>
@@ -127,19 +136,23 @@
 
             </div>
         </div>
+        </div>
 
         <!-- Mentor Card -->
         <div class="card">
             <img src="../images/Mentor_Logo.jpeg" alt="Mentor">
-            <div class="title">Mentor</div>
-            <div class="buttons">
-                <button class="btn1">Sign in</button>
-            </div>
-            <div>    
-                <button class="btn2">Sign up</button>
+            <div class="title ">Mentor</div>
+            <div class="flexy">
+                <div class="buttons ">
+                    <button class="btn1">Sign in</button>
+                </div>
+                <div>
+                    <button class="btn2">Sign up</button>
+                </div>
             </div>
         </div>
     </div>
 
 </body>
+
 </html>
