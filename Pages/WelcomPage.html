@@ -35,34 +35,6 @@
         <button class="continue-btn" id="continueBtn"><a href="./LoginPage.html">Continue</a></button>
     </div>
 
-    <script>
-        function animateLogoAndNavigate() {
-            const logo = document.querySelector('.logo');
-            const loginPageUrl = './LoginPage.html';
-
-            if (logo) {
-                logo.classList.add('animated');
-
-                setTimeout(() => {
-                    window.location.href = loginPageUrl;
-                }, 500);
-            } else {
-                console.error('Logo element not found.');
-                window.location.href = loginPageUrl;
-            }
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            const continueBtn = document.getElementById('continueBtn');
-            if (continueBtn) {
-                continueBtn.addEventListener('click', (event) => {
-                    event.preventDefault(); // Prevent default link behavior
-                    animateLogoAndNavigate();
-                });
-            } else {
-                console.error('Continue button not found.');
-            }
-        });
-    </script>
+    <script src="../JS Files/Animate.js"></script>
 </body>
 </html>
