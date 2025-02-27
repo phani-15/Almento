@@ -29,22 +29,31 @@
     </div>
 
     <script>
-        let chatList = document.getElementById('chatList')
+        names = ["hari","ramesh","phani","sri","surya"]
+        for (let i = 0; i < 5; i++) {
+            let chatList = document.getElementById('chatList')
             let image = document.createElement('img')
             image.src = "../images/UserIcon.png"
-            image.classList.add('size-[45px]',)
+            image.classList.add('size-[45px]', 'mt-2', 'ml-5')
             let li = document.createElement('li');
-            li.textContent = "phani"
+            let name = document.createElement('div')
+            name.textContent = names[i]
+            name.classList.add('ml-5', 'mt-4', 'text-xl')
             li.appendChild(image)
-            li.classList.add('flex-row-reverse','h-10', 'bg-[#310e3b]' ,'h-16','mx-5','rounded-full',)
+            li.appendChild(name)
+            li.classList.add('flex', 'bg-[#310e3b]', 'h-16', 'mx-5','my-2', 'rounded-full',)
             chatList.appendChild(li)
+        }
         function addChat() {
             let chatName = document.getElementById('chatName').value;
-
             document.getElementById('chatList').appendChild(li);
             if (chatName.trim() !== "") {
                 let li = document.createElement('li');
+                let image = document.createElement('img');
+                image.src = "../images/UserIcon.png"
+                image.classList.add('size-[45px]')
                 li.textContent = chatName;
+                li.classList.add('flex-row-reverse', 'h-10', 'bg-[#310e3b]', 'h-16', 'mx-5', 'rounded-full',)
                 document.getElementById('chatList').appendChild(li);
                 document.getElementById('chatName').value = "";
             }
