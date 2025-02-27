@@ -6,59 +6,101 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chatbox</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Hide scrollbar but allow scrolling */
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
 </head>
 
-<body class=" bg-slate-500">
-    <div class=" h-[100vh] flex fixed">
-        <div class="w-[25vw] bg-[#0F0113] ">
-            <div class="flex  h-16 m-5 ">
-                <img src="../images/Logo.jpeg" alt="logo">
+<body class="bg-[#594E5C]">
+    <div class="h-[100vh] flex fixed">
+        <!-- Sidebar -->
+        <div class="w-[25vw] bg-[#0F0113] flex flex-col">
+            <!-- Header -->
+            <div class="flex h-16 m-5 items-center">
+                <img src="../images/Logo.jpeg" class="size-[80px]" alt="logo">
                 <h2 class="text-white text-[30px] mx-8">Chats</h2>
             </div>
-            <div class="bg-[#310e3b] m-5 h-10 rounded-full align-center">
-                <input type="text" id="chatName" class="mx-5  bg-[#310e3b] my-2 text-white" placeholder="Search a Chat">
-                <button onclick="addChat()" class=" mt-2">
+            
+            <!-- Search Bar -->
+            <div class="bg-[#310e3b] mx-5 h-10 rounded-full flex items-center px-4">
+                <input type="text" id="chatName" class="bg-[#310e3b] text-white w-full outline-none placeholder-gray-300" placeholder="Search a Chat">
+                <button onclick="findChat()">
                     <img src="../images/search.png" class="size-[20px]" alt="search">
                 </button>
             </div>
-            <ul id="chatList" class="text-white"></ul>
-        </div>
-        <div class="chat">
 
+            <!-- Chat List with Hidden Scrollbar -->
+            <div class="relative h-[calc(100vh-8rem)] overflow-y-auto px-3 mt-4 scrollbar-hide">
+                <ul id="chatList" class="text-white space-y-2"></ul>
+            </div>
         </div>
+
+        <!-- Chat Space -->
+        <div class="flex-1 bg-[#594E5C]" id="chatSpace"></div>
     </div>
 
     <script>
-        names = ["hari","ramesh","phani","sri","surya"]
-        for (let i = 0; i < 5; i++) {
-            let chatList = document.getElementById('chatList')
-            let image = document.createElement('img')
+        
+        function openChat(index){
+            let chatPage = document.getElementById('chatSpace');
+            chatPage.innerHTML = ""
+            let head = document.createElement("div");
+            head.classList.add("bg-[#21012A]","h-16","w-[75vw]","flex")
+            let image = document.createElement('img');
             image.src = "../images/UserIcon.png"
-            image.classList.add('size-[45px]', 'mt-2', 'ml-5')
-            let li = document.createElement('li');
-            let name = document.createElement('div')
-            name.textContent = names[i]
-            name.classList.add('ml-5', 'mt-4', 'text-xl')
-            li.appendChild(image)
-            li.appendChild(name)
-            li.classList.add('flex', 'bg-[#310e3b]', 'h-16', 'mx-5','my-2', 'rounded-full',)
-            chatList.appendChild(li)
+            image.classList.add('size-[45px]' , 'mx-5',"mt-2");
+            let div = document.createElement("div");
+            div.textContent = names[index]
+            div.classList.add('text-2xl' ,'ml-5',"text-white","mt-4")
+            head.appendChild(image)
+            head.appendChild(div)
+            chatPage.appendChild(head)
         }
-        function addChat() {
-            let chatName = document.getElementById('chatName').value;
-            document.getElementById('chatList').appendChild(li);
-            if (chatName.trim() !== "") {
-                let li = document.createElement('li');
-                let image = document.createElement('img');
-                image.src = "../images/UserIcon.png"
-                image.classList.add('size-[45px]')
-                li.textContent = chatName;
-                li.classList.add('flex-row-reverse', 'h-10', 'bg-[#310e3b]', 'h-16', 'mx-5', 'rounded-full',)
-                document.getElementById('chatList').appendChild(li);
-                document.getElementById('chatName').value = "";
+
+        // Chat Names Array
+        let names = ["vinay", "phani", "pragna", "swaroop", "nagendra", "srujana", "pavan", "mounika", "sirisha","nageswari","jasmika","satya","srilaxmi"];
+        let chatList = document.getElementById('chatList');
+
+        // Load Initial Chats
+        names.forEach((name,index) => {
+            let li = document.createElement('li');
+            li.classList.add('flex', 'bg-[#310e3b]', 'h-16', 'rounded-full', 'items-center', 'px-5', 'hover:cursor-pointer');
+
+            let img = document.createElement('img');
+            img.src = "../images/UserIcon.png";
+            img.classList.add('size-[45px]');
+
+            let div = document.createElement('div');
+            div.textContent = name;
+            div.classList.add('text-xl', 'ml-5');
+
+            li.appendChild(img);
+            li.appendChild(div);
+            chatList.appendChild(li);
+            li.addEventListener("click",()=> openChat(index))
+        })
+
+        // Function to Find Chat
+        function findChat() {
+            let Name = document.getElementById('chatName').value.trim();
+            if (Name !== "") {
+                for(let index of names){
+                    if(index.trim() === Name){
+                        openChat(names.indexOf(index))
+                        document.getElementById("chatName").value = ""
+                        break ;
+                    }
+                }
             }
         }
     </script>
 </body>
 
-</html>
+</html>a
