@@ -8,12 +8,19 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="bg-[#0F0113]">
-    <div class=" h-[100vh] flex ">
-        <div class="w-[30vw] bg-slate-500">
-            <h2 class="text-white">Chats</h2>
-            <input type="text" id="chatName" placeholder="Enter chat name">
-            <button onclick="addChat()">Add Chat</button>
+<body class=" bg-slate-500">
+    <div class=" h-[100vh] flex fixed">
+        <div class="w-[25vw] bg-[#0F0113] ">
+            <div class="flex  h-16 m-5 ">
+                <img src="../images/Logo.jpeg" alt="logo">
+                <h2 class="text-white text-[30px] mx-8">Chats</h2>
+            </div>
+            <div class="bg-[#310e3b] m-5 h-10 rounded-full align-center">
+                <input type="text" id="chatName" class="mx-5  bg-[#310e3b] my-2 text-white" placeholder="Search a Chat">
+                <button onclick="addChat()" class=" mt-2">
+                    <img src="../images/search.png" class="size-[20px]" alt="search">
+                </button>
+            </div>
             <ul id="chatList"></ul>
         </div>
         <div class="chat">
