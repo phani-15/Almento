@@ -21,7 +21,7 @@
                     <img src="../images/search.png" class="size-[20px]" alt="search">
                 </button>
             </div>
-            <ul id="chatList"></ul>
+            <ul id="chatList" class="text-white"></ul>
         </div>
         <div class="chat">
 
@@ -29,8 +29,19 @@
     </div>
 
     <script>
+        let chatList = document.getElementById('chatList')
+            let image = document.createElement('img')
+            image.src = "../images/UserIcon.png"
+            image.classList.add('size-[45px]',)
+            let li = document.createElement('li');
+            li.textContent = "phani"
+            li.appendChild(image)
+            li.classList.add('flex-row-reverse','h-10', 'bg-[#310e3b]' ,'h-16','mx-5','rounded-full',)
+            chatList.appendChild(li)
         function addChat() {
             let chatName = document.getElementById('chatName').value;
+
+            document.getElementById('chatList').appendChild(li);
             if (chatName.trim() !== "") {
                 let li = document.createElement('li');
                 li.textContent = chatName;
