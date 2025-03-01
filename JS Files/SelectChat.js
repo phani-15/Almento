@@ -52,13 +52,20 @@ document.getElementById("chatName").addEventListener("keypress", function(event)
 // Function to Find Chat
 function findChat() {
     let Name = document.getElementById('chatName').value.trim();
+    let alert = document.getElementById('Alert')
+    let found = false
     if (Name !== "") {
         for (let name of names) {
             if (isEqualIgnoreCase(name,Name)) {
+                alert.textContent = ""
                 openChat(names.indexOf(name))
                 document.getElementById("chatName").value = ""
+                found = true
                 break;
             }
         }
+    }
+    if(!found){
+        alert.textContent = "chat is not found"
     }
 }
