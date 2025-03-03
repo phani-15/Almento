@@ -1,4 +1,17 @@
 
+function sendMessage() {
+    let inputField = document.getElementById("messageInput");
+    let message = inputField.value.trim();
+    if (message) {
+        let chatBox = document.getElementById("chats");
+        let newMessage = document.createElement("div");
+        newMessage.className = "text-white bg-[#D9D9D9] p-2 px-4 rounded-full w-fit max-w-[60%] self-end my-2";
+        newMessage.innerText = message;
+        chatBox.appendChild(newMessage);
+        inputField.value = "";
+        chatBox.scrollTop = chatBox.scrollHeight; // Auto-scroll to the latest message
+    }
+}
 
 function openChat(index) {
     let chatPage = document.getElementById('ChatHead');
@@ -43,6 +56,12 @@ function isEqualIgnoreCase(str1,str2){
     let st2 = str2.toLowerCase()
     return (st1 === st2) 
 }
+
+document.getElementById("messageInput").addEventListener("keypress",function(event){
+    if(event.key=== "Enter"){
+        sendMessage();
+    }
+})
 
 document.getElementById("chatName").addEventListener("keypress", function(event) {
     if (event.key === "Enter") { // Check if Enter is pressed
