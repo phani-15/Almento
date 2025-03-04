@@ -5,7 +5,7 @@ function sendMessage() {
     if (message) {
         let chatBox = document.getElementById("chats");
         let newMessage = document.createElement("div");
-        newMessage.className = "text-white bg-[#D9D9D9] p-2 px-4 rounded-full w-fit max-w-[60%] self-end my-2";
+        newMessage.className = "text-white bg-[#A9A9A9] p-2 px-4 rounded-full w-fit max-w-[60%] self-end my-2";
         newMessage.innerText = message;
         chatBox.appendChild(newMessage);
         inputField.value = "";
@@ -17,14 +17,19 @@ function openChat(index) {
     let chatPage = document.getElementById('ChatHead');
     chatPage.classList.add("bg-[#21012A]",  "flex")
     chatPage.innerHTML = ""
+
     let image = document.createElement('img');
     image.src = "../images/UserIcon.png"
     image.classList.add('size-[45px]', 'mx-5', "mt-2");
+
     let div = document.createElement("div");
     div.textContent = names[index]
     div.classList.add('text-2xl', 'ml-5', "text-white", "mt-4")
+
     chatPage.appendChild(image)
     chatPage.appendChild(div)
+
+    document.getElementById("typeSpace").classList.remove("hidden")
 }
 
 // Chat Names Array
@@ -48,6 +53,7 @@ names.forEach((name, index) => {
     li.appendChild(div);
     chatList.appendChild(li);
     li.addEventListener("click", () => openChat(index))
+
 })
 
 // function to check names are same or not

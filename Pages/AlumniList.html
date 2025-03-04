@@ -13,7 +13,7 @@
     <div class="flex w-full ">
         <img src="../images/Logo.png" alt="logo " class="size-[70px]">
         <div class=" text-center w-full mr-10">
-            <h1 class="text-4xl mt-4 font-semibold mb-10 text-gold">
+            <h1 class="text-4xl mt-4 font-semibold mb-10 bg-gradient-to-b from-[#F8EFBE] to-[#996C00] bg-clip-text text-transparent">
                 List of Software Engineers
             </h1>
         </div>
@@ -22,43 +22,7 @@
     <!-- Container for dynamic cards -->
     <div id="cardContainer" class="flex flex-wrap justify-center gap-10"></div>
 
-    <script>
-        // Sample data
-        const engineers = [
-            { name: "John Doe", company: "Google", role: "Software Engineer", experience: "5 Years" },
-            { name: "Jane Smith", company: "Microsoft", role: "Frontend Developer", experience: "3 Years" },
-            { name: "Alice Johnson", company: "Wipro", role: "Backend Developer", experience: "4 Years" },
-            { name: "mitchell", company: "Amazon", role: "Full Stack Developer", experience: "2 Years" },
-            { name: "Bradman", company: "TCs", role: ".NET Developer", experience: "3 Years" }
-        ];
-
-        // Function to generate cards dynamically
-        function generateCards() {
-            const container = document.getElementById("cardContainer");
-
-            engineers.forEach(engineer => {
-                const card = document.createElement("div");
-                card.className = "relative bg-[#12091b] w-60 p-6 rounded-[30px] text-center border-2 border-gray-500 shadow-md shadow-[#3b2958]";
-
-                card.innerHTML = `
-                    <div class="w-20 h-20 bg-[#222] rounded-full mx-auto flex items-center justify-center border-[3px] border-gray-400 shadow-md shadow-[#3b2958]">
-                        <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="Profile" class="w-16 h-16 rounded-full">
-                    </div>
-                    <p class="mt-4 text-[#c9a36a] text-lg font-medium">
-                        ${engineer.name} <br>
-                        <span class="text-sm text-gray-400">${engineer.company}</span> <br>
-                        <span class="text-sm">${engineer.role}</span> <br>
-                        <span class="text-sm">${engineer.experience}</span>
-                    </p>
-                `;
-
-                container.appendChild(card);
-            });
-        }
-
-        // Generate the cards
-        generateCards();
-    </script>
+    <script src="../JS Files/Mentors.js"></script>
 
 </body>
 
