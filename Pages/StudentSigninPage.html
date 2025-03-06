@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        
+        /* Background image remains sharp outside the login box */
+        body {
+            background: url('../images/BackgroundLogo.jpeg') no-repeat center center/cover;
+             /* Blur Effect */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            background-size: cover;
+            position: relative; /* Ensures absolute positioning works */
+        }
+
+        /* Enlarged and Wider Login Box */
+        .login-container {
+            width: 950px;
+	        height:500px;
+            background: rgba(255, 255, 255, 0.1); /* Glassmorphism */
+            border-radius: 50px;
+            border: 2px solid #d4af37; /* Light Golden Border */
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+            backdrop-filter: blur(8px);
+            padding: 40px 30px 50px;
+            text-align: center;
+	        padding-bottom:-200px;
+	        overflow:hidden;
+	        display:flex;
+	        flex-direction:column;
+	        gap:20px;
+	        justify-content: space-between;
+        }
+
+        /* Background Blur inside the Box but Seamless */
+        .login-container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: inherit; /* Use the same background as the body */
+            backdrop-filter: blur(8px); /* Blurs only inside the box */
+            z-index: -1;
+        }
+
+        .login-content {
+            position: absolute;
+            padding-left: 50px;
+            height: auto;
+            width: 830px;
+            z-index: 1; /* Ensures text and form elements stay clear */
+        }
+
+        .login-content h2 {
+            color: #fff;
+            margin-bottom: 30px;
+            font-size: 28px;
+            letter-spacing: 1px;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 18px;
+            margin: 14px 0;
+            border: 1px solid #ddd;
+            border-radius: 25px;
+            font-size: 20px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+
+        .input-field::placeholder {
+            color: #ddd;
+        }
+
+        /* Positioning "Generate OTP" to the right */
+        .otp-container {
+            display: flex;
+            justify-content: flex-end;
+            margin: 12px 0 25px 0;
+        }
+
+        .otp-link {
+            color: #cccccc;
+            font-size: 18px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .login-btn {
+            width: 120px;
+            padding: 14px;
+            background: purple;
+            border: none;
+            color: white;
+            font-size: 18px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: 0.3s;
+	        margin-bottom:0px;
+        }
+
+        .login-btn:hover {
+            background: linear-gradient(90deg, #9a32cd, #6a0dad);
+        }
+
+        /* Positioning the Almento Logo at the top-left */
+        .logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            /* Removed border */
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class="login-container">
+        <div class="login-content">
+            <h2>WELCOME BACK</h2>
+            <input type="text" class="input-field" placeholder="Username/Phone Number">
+            <input type="password" class="input-field" placeholder="Password">
+            <div class="otp-container">
+                <span class="otp-link">Generate OTP</span>
+            </div>
+            <button class="login-btn">Login</button>
+        </div>
+    </div>
+
+    <!-- Almento Logo at Top-Left -->
+    <a href="/LoginPage.html"><img src="../images/Logo.png" alt="Almento Logo" class="logo"></a>
+
+</body>
+</html>
