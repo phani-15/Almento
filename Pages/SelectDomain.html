@@ -46,7 +46,7 @@
         .search-box {
             display: flex;
             align-content:center;
-            background: rgb(216, 185, 5); 
+            background:gold  ; 
             padding: 5px;
             border-radius:20px; 
             width: 100%;
@@ -54,6 +54,23 @@
             margin: 20px auto;
             
         }
+        .search-box select {
+            background: transparent;
+            border: none;
+            outline: none;
+            color: black;
+            font-size: 16px;
+            padding: 5px;
+            appearance: none;
+            width: 70%;
+        }
+        .search-box select option {
+            color: black;
+        }
+        .icon {
+            margin-right: 10px;
+        }
+
         .search-box input {
             border: none; 
             background: transparent; 
@@ -74,20 +91,13 @@
         }
         .overlay-text {
             position: absolute;
-            top: 50%; right: 10%; 
+            top: 60%; right: 10%; bottom:90%;
             transform: translateY(-50%);
             color: gold; 
             font-size: 30px; 
             text-align: right;
         }
-        .overlay-box::before {
-            top: -10px;
-            left:-15px;
-        }
-        .overlay-box::after {
-            bottom: -10px;
-            right:40px;
-        } 
+       
 
          .logo img {
             height: 45px;
@@ -167,13 +177,28 @@
              position: relative;
              display: inline-block;
         }
-        .overlay-box::before,
-        .overlay-box::after {
-              content: " ";
-                position: absolute;
-              width: 30px;
-               height: 2px;
-             background-color: gold;
+        
+        .quote::before, 
+        .quote::after {
+            content: "";
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            border: 2px solid #c2a06c;
+        }
+
+        .quote::before {
+            top: 0;
+            left: 0;
+            border-right: none;
+            border-bottom: none;
+        }
+
+        .quote::after {
+            bottom:100;
+            right: 110;
+            border-left: none;
+            border-top: none;
         }
         
 </style>
@@ -184,13 +209,16 @@
 </div>
 <div class="icons">
     <img src="chatbox.jpg" alt="Chat">
-    <img src="../images/UserIcon2.png " alt="Profile">
+    <img src="../images/UserIcon2.png" alt="Profile">
 </div>
 </div>
 <div class="container">
 <div class="section1">
     <img src="../images/picture1.jpeg " alt="Study Image">
-    <div class="overlay-text">Study hard for your future and never stop for anyone</div>
+    <div class="overlay-text">
+        <div class="quote" >Study hard for your future and never stop for anyone</div>
+
+    </div>
 </div>
 </div>
     <div class="container">
@@ -213,8 +241,16 @@
         <div class="search-section">
             <h2 style="color: gold" ;>Search your interested Domain here</h2>
             <div class="search-box">
-                <span>🔍</span>
-                <input type="text" placeholder="Enter domain name">
+                <span class="icon">🔍</span>
+                <select background="gold">
+                    <option value="" disabled selected>Select a domain</option>
+                    <option value="softwareengineer">Software Engineeer</option>
+                    <option value="fullstackdevelopment">Full Stack Development</option>
+                    <option value="cybersecurity">Cyber Security</option>
+                    <option value="iot">Iot</option>
+                    <option value="dataanalysis">Data Analysis</option>
+                </select>
+    
             </div>
         </div>
         </div>
