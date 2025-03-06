@@ -33,7 +33,7 @@ function openChat(index) {
 }
 
 // Chat Names Array
-let names = ["vinay","Padhu", "Phani","Amina", "pragna", "swaroop", "nagendra", "srujana", "pavan", "mounika", "sirisha", "nageswari", "jasmika", "satya", "srilaxmi"];
+let names = ["vinay","Padhu", "Phani","Noor", "pragna", "swaroop", "nagendra", "srujana", "pavan", "mounika", "sirisha", "nageswari", "jasmika", "satya", "srilaxmi"];
 let chatList = document.getElementById('chatList');
 
 // Load Initial Chats
