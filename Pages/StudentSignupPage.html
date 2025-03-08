@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Register</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        /* Full Page Background */
+        body {
+            background: url('../images/BackgroundLogo.jpeg') no-repeat center center/cover;
+             /* Blur Effect */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            background-size: cover;
+            position: relative; /* Ensures absolute positioning works */
+        }
+
+        /* Logo Styling */
+        .logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 80px; /* Adjust size as needed */
+            height: auto;
+        }
+
+        /* Mentor Registration Box */
+        .container {
+            width: 950px;
+	    height:600px;
+            background: rgba(255, 255, 255, 0.1); /* Glassmorphism */
+            border-radius: 50px;
+            border: 2px solid #d4af37; /* Light Golden Border */
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+            backdrop-filter: blur(8px);
+            padding: 40px 30px 50px;
+            text-align: center;
+	    padding-bottom:-200px;
+	   overflow:hidden;
+	    display:flex;
+	    flex-direction:column;
+	    gap:20px;
+	    justify-content: space-between;
+	    
+
+        }
+
+        /* Title */
+        .container h2 {
+            color: #fff;
+            margin-bottom: 30px;
+            font-size: 28px;
+            letter-spacing: 1px;
+        }
+
+        /* Form Structure */
+        .form {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            padding-bottom: 100px;
+        }
+
+        /* Vertical Divider */
+        .divider {
+            width: 1px;
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Form Groups */
+        .form-group {
+            width: 48%;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        /* Input Fields */
+        .form-group input {
+            padding: 12px;
+	    width:90%;
+	    margin:10px 0;
+            border: 2px solid rgba(255,255,255,0.3); /* Light Golden Border */
+            border-radius: 25px;
+            outline: none;
+            background-color: rgba(255, 255, 255, 0.15);
+            color: #fff;
+        }
+
+        .form-group input::placeholder {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* Register Button */
+        .btn {
+            width: 120px;
+            padding: 14px;
+            background: purple;
+            border: none;
+            color: white;
+            font-size: 18px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: 0.3s;
+	    margin-bottom:0px;
+        }
+
+        .btn:hover {
+            background: linear-gradient(90deg, #9a32cd, #6a0dad);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .form {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .form-group, .divider {
+                width: 100%;
+            }
+
+            .divider {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Logo -->
+    <a href="../Pages/LoginPage.html"><img src="../images/Logo2.png" alt="Student Register Logo" class="logo"></a>
+
+    <div class="container">
+        <h2>STUDENT REGISTER</h2>
+        <form>
+            <div class="form">
+                <!-- Left Column -->
+                <div class="form-group">
+                    <input type="text" placeholder="Name" required>
+                    <input type="text" placeholder="Username" required>
+                    <input type="password" placeholder="Create Password" required>
+                </div>
+
+                <!-- Divider -->
+                <div class="divider"></div>
+
+                <!-- Right Column -->
+                <div class="form-group">
+                    <input type="text" placeholder="Phone Number" required pattern="\d{10}" title="Phone number should be 10 digits.">
+                    <input type="email" placeholder="Email"required pattern="^[a-zA-Z0-9._%+-]+@abc\.com$" title="Email must be in the format 'example@abc.com'">
+                </div>
+            </div>
+
+            <!-- Register Button -->
+            <button class="btn" type="submit">Register</button>
+        </form>
+    </div>
+
+</body>
+</html>
