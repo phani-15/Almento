@@ -242,8 +242,8 @@
             <h2 style="color: gold" ;>Search your interested Domain here</h2>
             <div class="search-box">
                 <span class="icon">🔍</span>
-                <select background="gold">
-                    <option value="" disabled selected>Select a domain</option>
+                <select background="gold" id="SelectedDomain" onchange="Changed()">
+                    <option value="">Select a domain</option>
                     <option value="softwareengineer">Software Engineeer</option>
                     <option value="fullstackdevelopment">Full Stack Development</option>
                     <option value="cybersecurity">Cyber Security</option>
@@ -255,6 +255,10 @@
         </div>
         </div>
     </div>
-    
+    <script>
+        function Changed(){
+            console.log(document.getElementById("SelectedDomain").value)
+        }
+    </script>
 </body>
 </html>
