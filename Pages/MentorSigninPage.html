@@ -89,10 +89,10 @@
 
         .logo {
             position: absolute;
-            top: 20px;
-            left: 20px;
-            width: 90px;
-            height: 90px;
+            top: 15px;
+            left: 15px;
+            width: 80px;
+            height: 80px;
             border-radius: 50%;
         }
 
@@ -114,31 +114,34 @@
     </style>
 </head>
 <body>
+    
     <div class="login-container">
         <div class="login-content">
             <h2>WELCOME BACK</h2>
-            <form id="loginForm">
-                <input type="text" id="username" class="input-field" placeholder="Username/Phone Number" required>
-                <input type="password" id="password" class="input-field" placeholder="Password" required>
-                <div class="otp-container">
-                    <span class="otp-link">Generate OTP</span>
-                </div>
-                <button type="submit" class="login-btn">Login</button>
-            </form>
+            <input type="text" class="input-field" id="username" placeholder="Username/Phone Number">
+            <input type="password" class="input-field" id="password" placeholder="Password">
+            <div class="otp-container">
+                <span class="otp-link">Generate OTP</span>
+            </div>
+            <button class="login-btn" onclick="logCredentials()">Login</button>
         </div>
     </div>
-    
+
     <a href="LoginPage.html"><img src="../images/Logo.png" alt="Almento Logo" class="logo"></a>
-    
+
     <script>
-        document.getElementById('loginForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            let username = document.getElementById('username').value;
-            let password = document.getElementById('password').value;
-            console.log('Username/Phone Number:', username);
-            console.log('Password:', password);
-            alert('Login successful!');
-        });
+        function logCredentials() {
+            let username = document.getElementById("username").value.trim();
+            let password = document.getElementById("password").value.trim();
+
+            if (username === "" || password === "") {
+                alert("Please enter both Username/Phone Number and Password.");
+            } else {
+                console.log("Username/Phone Number:", username);
+                console.log("Password:", password);
+                window.location.href = "selectDomain.html"; // Redirect if valid input
+            }
+        }
     </script>
 </body>
 </html>
