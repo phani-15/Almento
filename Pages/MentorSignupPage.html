@@ -16,14 +16,13 @@
         /* Full Page Background */
         body {
             background: url('../images/BackgroundLogo.jpeg') no-repeat center center/cover;
-             /* Blur Effect */
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             overflow: hidden;
             background-size: cover;
-            position: relative; /* Ensures absolute positioning works */
+            position: relative;
         }
 
         /* Logo Styling */
@@ -31,29 +30,25 @@
             position: absolute;
             top: 20px;
             left: 20px;
-            width: 80px; /* Adjust size as needed */
+            width: 80px;
             height: auto;
         }
 
         /* Mentor Registration Box */
         .container {
             width: 950px;
-	    height:600px;
-            background: rgba(255, 255, 255, 0.1); /* Glassmorphism */
+            height: 600px;
+            background: rgba(255, 255, 255, 0.1);
             border-radius: 50px;
-            border: 2px solid #d4af37; /* Light Golden Border */
+            border: 2px solid #d4af37;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
             backdrop-filter: blur(8px);
             padding: 40px 30px 50px;
             text-align: center;
-	    padding-bottom:-200px;
-	   overflow:hidden;
-	    display:flex;
-	    flex-direction:column;
-	    gap:20px;
-	    justify-content: space-between;
-	    
-
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            justify-content: space-between;
         }
 
         /* Title */
@@ -88,9 +83,9 @@
         /* Input Fields */
         .form-group input {
             padding: 12px;
-	    width:90%;
-	    margin:10px 0;
-            border: 2px solid rgba(255,255,255,0.3); /* Light Golden Border */
+            width: 90%;
+            margin: 10px 0;
+            border: 2px solid rgba(255,255,255,0.3);
             border-radius: 25px;
             outline: none;
             background-color: rgba(255, 255, 255, 0.15);
@@ -125,7 +120,6 @@
             border-radius: 30px;
             cursor: pointer;
             transition: 0.3s;
-	    margin-bottom:0px;
         }
 
         .btn:hover {
@@ -156,14 +150,14 @@
 
     <div class="container">
         <h2>MENTOR REGISTER</h2>
-        <form>
+        <form id="mentor-form">
             <div class="form">
                 <!-- Left Column -->
                 <div class="form-group">
-                    <input type="text" placeholder="Name" required>
-                    <input type="text" placeholder="Username" required>
-                    <input type="password" placeholder="Create Password" required>
-                    <input type="text" placeholder="Company" required>
+                    <input type="text" id="name" placeholder="Name" required>
+                    <input type="text" id="username" placeholder="Username" required>
+                    <input type="password" id="password" placeholder="Create Password" required>
+                    <input type="text" id="company" placeholder="Company" required>
                 </div>
 
                 <!-- Divider -->
@@ -171,10 +165,10 @@
 
                 <!-- Right Column -->
                 <div class="form-group">
-                    <input type="text" placeholder="Phone Number" required pattern="\d{10}" title="Phone number should be 10 digits.">
-                    <input type="email" placeholder="Email"required pattern="^[a-zA-Z0-9._%+-]+@abc\.com$" title="Email must be in the format 'example@abc.com'">
-                    <input type="text" placeholder="Domain" required>
-                    <input type="text" placeholder="Experience" required>
+                    <input type="text" id="phone" placeholder="Phone Number" required pattern="\d{10}" title="Phone number should be 10 digits.">
+                    <input type="email" id="email" placeholder="Email" required pattern="^[a-zA-Z0-9._%+-]+@abc\.com$" title="Email must be in the format 'example@abc.com'">
+                    <input type="text" id="domain" placeholder="Domain" required>
+                    <input type="text" id="experience" placeholder="Experience" required>
                 </div>
             </div>
 
@@ -188,6 +182,24 @@
             <button class="btn" type="submit">Register</button>
         </form>
     </div>
+
+    <script>
+        document.getElementById("mentor-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            
+            let name = document.getElementById("name").value;
+            let username = document.getElementById("username").value;
+            let password = document.getElementById("password").value;
+            let company = document.getElementById("company").value;
+            let phone = document.getElementById("phone").value;
+            let email = document.getElementById("email").value;
+            let domain = document.getElementById("domain").value;
+            let experience = document.getElementById("experience").value;
+            let whatsapp = document.getElementById("whatsapp").checked;
+            
+            console.log("Mentor Registration:", { name, username, password, company, phone, email, domain, experience, whatsapp });
+        });
+    </script>
 
 </body>
 </html>
