@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,12 +13,6 @@
             font-family: 'Poppins', sans-serif;
         }
 
-        .flexy {
-            display: flex;
-            justify-content: space-around;
-        }
-
-        /* Page styling */
         body {
             background-color: #0F0113;
             display: flex;
@@ -29,16 +22,17 @@
             flex-direction: column;
             border: 5px solid;
             padding: 20px;
+            text-align: center;
         }
 
-        /* Container for cards */
         .container {
             display: flex;
-            gap: 80px;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 50px;
             margin-top: 50px;
         }
 
-        /* Card styling */
         .card {
             background-color: #1A0D1E;
             width: 330px;
@@ -47,9 +41,13 @@
             border-radius: 25px;
             box-shadow: 0px 0px 20px rgba(255, 215, 0, 0.2);
             border: 1px solid #F5E4C3;
+            transition: transform 0.3s;
         }
 
-        /* Circular profile image */
+        .card:hover {
+            transform: scale(1.05);
+        }
+
         .card img {
             width: 200px;
             height: 200px;
@@ -58,54 +56,35 @@
             border: 1px solid #F5E4C3;
         }
 
-        /* Title styling */
         .title {
-            margin: 75px 0;
             font-size: 22px;
-            font-weight: linear;
+            font-weight: bold;
             color: rgb(244, 232, 166);
-            margin-bottom: 40px;
+            margin: 40px 0;
         }
 
-        /* Button container */
         .buttons {
             display: flex;
             justify-content: center;
             gap: 10px;
-            margin-top: 2s0px;
         }
 
-        /* Button styles */
-        .btn1 {
+        .btn {
             background: linear-gradient(to bottom, #0A043C, #0E0D0D);
             color: #F5E4C3;
             border: 1px solid #F5E4C3;
-            padding: 8px 20px;
-            border-radius: 20px;
-            cursor: pointer;
-            font-size: 14px;
-            transition: 0.3s;
-            margin-bottom: 15px;
-        }
-
-        .btn2 {
-            background: linear-gradient(to bottom, #0A043C, #0E0D0D);
-            color: #F5E4C3;
-            border: 1px solid #F5E4C3;
-            padding: 8px 20px;
+            padding: 10px 20px;
             border-radius: 20px;
             cursor: pointer;
             font-size: 14px;
             transition: 0.3s;
         }
 
-        /* Hover effect */
         .btn:hover {
             background-color: gold;
             color: black;
         }
 
-        /* Logo styling */
         .logo {
             position: absolute;
             top: 20px;
@@ -114,44 +93,53 @@
             height: 90px;
             border-radius: 50%;
         }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .card {
+                width: 90%;
+            }
+
+            .logo {
+                width: 70px;
+                height: 70px;
+                top: 10px;
+                left: 10px;
+            }
+        }
     </style>
 </head>
-
 <body>
 
-    <!-- Logo -->
     <img src="../images/Logo.png" alt="Logo" class="logo">
 
     <div class="container">
-        <!-- Student Card -->
         <div class="card">
             <img src="../images/Student_Logo.jpeg" alt="Student">
             <div class="title">Student</div>
-            <div class="flexy">
             <div class="buttons">
-                <a href="StudentSigninPage.html"><button class="btn1">Sign in</button></a>
+                <a href="StudentSigninPage.html"><button class="btn">Sign in</button></a>
+                <a href="StudentSignupPage.html"><button class="btn">Sign up</button></a>
             </div>
-            <div>
-                <a href="StudentSignupPage.html"><button class="btn2">Sign up</button></a>
-            </div>
-        </div>
         </div>
 
-        <!-- Mentor Card -->
         <div class="card">
             <img src="../images/Mentor_Logo.jpeg" alt="Mentor">
-            <div class="title ">Mentor</div>
-            <div class="flexy">
-                <div class="buttons ">
-                    <a href="MentorSigninPage.html"><button class="btn1">Sign in</button></a>
-                </div>
-                <div>
-                    <a href="MentorSignupPage.html"><button class="btn2">Sign up</button></a>
-                </div>
+            <div class="title">Mentor</div>
+            <div class="buttons">
+                <a href="MentorSigninPage.html"><button class="btn">Sign in</button></a>
+                <a href="MentorSignupPage.html"><button class="btn">Sign up</button></a>
             </div>
         </div>
     </div>
 
 </body>
-
 </html>
