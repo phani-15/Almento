@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>User Profile</title>
+  <style>
+    /* Body & Overall Layout */
+    body {
+      margin: 0;
+      padding: 0;
+      background: #0e0d0e; /* Dark background */
+      color: gold;
+      font-family: Arial, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+    .container {
+      scroll-snap-type: y mandatory;   
+      overflow-y: scroll;
+      width: 85%;
+      max-width: 1800px;
+      margin: 0 auto 40px;
+      background: #150015;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0px 0px 10px rgba(255, 215, 0, 0.5);
+    }
+
+    /* Header Section */
+    .header {
+      position: relative;
+      /* Increase the bottom padding to give space before the profile picture */
+      padding: 40px 20px 60px;
+      background: linear-gradient(to bottom, #330033, transparent);
+      text-align: center;
+    }
+    .back-arrow {
+      position: absolute;
+      left: 20px;
+      top: 20px;
+      font-size: 24px;
+      cursor: pointer;
+    }
+    .page-title {
+      margin: 0;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    /* Profile Section */
+    .profile-section {
+      /* Removed negative margin so the title doesn't overlap */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0 auto 20px;
+      position: relative;
+    }
+    .profile-picture {
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      border: 3px solid gold;
+      background: url('profile-placeholder.png') no-repeat center / cover;
+      position: relative;
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+    }
+    img {
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+    }
+    
+    .camera-icon {
+      position: absolute;
+      bottom: 0;
+      right: 45%;
+      transform: translate(50%, 20%);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: #131313;
+      color: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      cursor: pointer;
+      box-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
+      bottom: padding -50px;
+    }
+
+    /* Camera Options */
+    .camera-options {
+      display: none;
+      position: absolute;
+      background: #2c002e;
+      color: white;
+      border: 1px solid rgb(10, 10, 10);
+      padding: 10px;
+      border-radius: 5px;
+      top: 80%;
+      right: 30%;
+      z-index: 10;
+    }
+    .camera-options button {
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+      margin: 10px 0;
+      font-size: 16px;
+    }
+
+    /* Form Section */
+    .form-container {
+      padding: 30px 60px 60px;
+      margin-top:25px;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+      
+    }
+    .form-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 150px;
+    }
+    .input-group {
+      flex: 1;
+      min-width: 200px;
+      display: flex;
+      flex-direction: column;
+    }
+    .input-group label {
+      margin-bottom: 5px;
+      font-size: 16px;
+    }
+    .input-group input {
+      padding: 20px;
+      background: #D9D9D94D;
+      border-color: goldenrod;
+      border-radius: 10px;
+      color: white;
+      font-size: 16px;
+    }
+
+    /* Password Toggle */
+    .password-container {
+      position: relative;
+    }
+    .toggle-password {
+      position: absolute;
+      right: 10px;
+      top: 35px;
+      cursor: pointer;
+    }
+
+    /* Submit Button */
+    .submit-btn {
+
+  display: block;
+  margin: 40px auto 0; /* Centers the button horizontally */
+  width: 50%; /* Adjust as needed */
+  padding: 15px;
+  background: #330033;
+  color: yellow;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  text-align: center;
+
+}
+    .submit-btn:hover {
+      background: #91868c;
+    }
+
+    /* Responsive Design */
+@media (max-width: 1200px) {
+  .container {
+    width: 90%;
+  }
+  .profile-picture {
+    width: 250px;
+    height: 250px;
+  }
+  img {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+@media (max-width: 992px) {
+  .container {
+    width: 95%;
+  }
+  .profile-picture {
+    width: 200px;
+    height: 200px;
+  }
+  img {
+    width: 200px;
+    height: 200px;
+  }
+  .form-container {
+    padding: 20px;
+  }
+  .form-row {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 30px 10px;
+  }
+  .page-title {
+    font-size: 20px;
+  }
+  .back-arrow {
+    font-size: 20px;
+    left: 10px;
+  }
+  .profile-picture {
+    width: 150px;
+    height: 150px;
+  }
+  img {
+    width: 150px;
+    height: 150px;
+  }
+  .camera-icon {
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+  }
+  .form-container {
+    padding: 15px;
+  }
+  .input-group input {
+    padding: 15px;
+    font-size: 14px;
+  }
+  .submit-btn {
+    width: 70%;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 100%;
+    border-radius: 0;
+  }
+  .header {
+    padding: 20px 5px;
+  }
+  .page-title {
+    font-size: 18px;
+  }
+  .profile-picture {
+    width: 120px;
+    height: 120px;
+  }
+  img {
+    width: 120px;
+    height: 120px;
+  }
+  .camera-icon {
+    width: 25px;
+    height: 25px;
+    font-size: 12px;
+  }
+  .form-container {
+    padding: 10px;
+  }
+  .input-group input {
+    padding: 12px;
+    font-size: 12px;
+  }
+  .submit-btn {
+    width: 90%;
+    font-size: 14px;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header with Back Arrow and Title -->
+    <div class="header">
+      <span class="back-arrow" onclick="history.back();">&#x2190;</span>
+      <h1 class="page-title">Name</h1>
+    </div>
+
+    <!-- Profile Section -->
+    <div class="profile-section">
+      <div class="profile-picture" id="profilePicture">
+        <img src="../images/ProfileImage.jpg" alt="ProfileImage">
+      </div>
+      <div class="camera-icon" onclick="toggleCameraOptions()"></div>
+      <div class="camera-options" id="cameraOptions">
+        <input type="file" id="uploadInput" style="display: none;" accept="image/*" onchange="previewImage(event)">
+        <button onclick="document.getElementById('uploadInput').click()">Upload Picture</button>
+      </div>
+    </div>
+
+    <!-- Form Container -->
+    <div class="form-container">
+      <form onsubmit="return validateForm()">
+        <!-- Row 1: Username & Phone Number -->
+        <div class="form-row">
+          <div class="input-group">
+            <label>Username</label>
+            <input type="text" id="username" required>
+          </div>
+          <div class="input-group">
+            <label>Phone Number</label>
+            <input type="text" id="phone" maxlength="10" 
+              oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0,10);" 
+              required>
+          </div>
+        </div>
+
+        <!-- Row 2: Name & Email -->
+        <div class="form-row">
+          <div class="input-group">
+            <label>Name</label>
+            <input type="text" id="fullname" required>
+          </div>
+        </div>
+        <div class=""form-row">
+          <div class="input-group">
+            <label>Email</label>
+            <input type="email" id="email" required>
+          </div>
+        </div>
+
+        <!-- Row 3: Password -->
+        <div class="form-row">
+          <div class="input-group password-container">
+            <label>Password</label>
+            <input type="password" id="password" required>
+            <span class="toggle-password" onclick="togglePassword()"></span>
+          </div>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="submit-btn">Save Profile</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+
+
+    function toggleCameraOptions() {
+      var options = document.getElementById('cameraOptions');
+      options.style.display = (options.style.display === 'block') ? 'none' : 'block';
+    }
+
+    // Click outside to close camera options
+    document.addEventListener('click', function(event) {
+      var options = document.getElementById('cameraOptions');
+      if (!event.target.closest('.camera-icon') && 
+          !event.target.closest('.camera-options')) {
+        options.style.display = 'none';
+      }
+    });
+
+    function previewImage(event) {
+      var reader = new FileReader();
+      reader.onload = function() {
+        document.getElementById('profilePicture').style.backgroundImage = 'url(' + reader.result + ')';
+      };
+      reader.readAsDataURL(event.target.files[0]);
+    }
+
+    function togglePassword() {
+      var passwordField = document.getElementById('password');
+      var toggleIcon = document.querySelector('.toggle-password');
+      if (passwordField.type === 'password') {
+        passwordField.type = 'text';
+        toggleIcon.textContent = '';
+      } else {
+        passwordField.type = 'password';
+        toggleIcon.textContent = '';
+      }
+    }
+
+    function validateForm() {
+        var username = document.getElementById('username').value;
+        var name = document.getElementById('name').value;
+        var phonenumber = document.getElementById('phonenumber').value;
+      var email = document.getElementById('email').value;
+      var password = document.getElementById('password').value;
+      var emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+      var passwordPattern = /^(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,11}$/;
+      var usernamePattern = /^[A-Za-z]+$/;
+      var namePattern = /^[A-Za-z\s]+$/;
+      var phonePattern = /^\d{10}$/;
+        
+      if (!usernamePattern.test(username)) {
+        alert("Username should contain only letters.");
+        return;
+      }
+
+      if (!namePattern.test(name)) {
+            alert("Name should contain only letters and spaces.");
+            return;
+      }
+
+      if (!phonePattern.test(phone)) {
+            alert("Phone Number should contain 10-digits only.");
+            return;
+        }
+
+      if (!emailRegex.test(email)) {
+        alert('Please enter a valid email address.');
+        return false;
+      }
+      if (!passwordPattern.text(password)) {
+        alert('Password must be 6-11 characters long, include at least one number, and at least one special character.');
+        return false;
+      }
+      // You can add more validation logic here (e.g., phone number, username, etc.)
+      return true;
+    }
+  </script>
+</body>
+</html>
