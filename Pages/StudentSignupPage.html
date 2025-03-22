@@ -199,19 +199,54 @@
 
     <script>
         function validateAndRedirect() {
-            let name = document.getElementById("name").value.trim();
-            let username = document.getElementById("username").value.trim();
-            let password = document.getElementById("password").value.trim();
-            let phone = document.getElementById("phone").value.trim();
-            let email = document.getElementById("email").value.trim();
+            let student = {
+                name: document.getElementById("name").value.trim(),
+                username: document.getElementById("username").value.trim(),
+                password: document.getElementById("password").value.trim(),
+                phone: document.getElementById("phone").value.trim(),
+                email: document.getElementById("email").value.trim()
+            };
 
-            if (!name || !username || !password || !phone || !email) {
+            if (!student.name || !student.username || !student.password || !student.phone || !student.email) {
                 alert("Please fill in all fields.");
                 return;
             }
 
-            // Redirect automatically without asking for confirmation
-            window.location.href = "SelectDomain.html";
+            let namePattern = /^[A-Za-z]+$/;
+            if (!namePattern.test(student.name)) {
+                alert("Name should contain only letters and spaces.");
+                return;
+            }
+
+            let usernamePattern = /^[A-Za-z]+$/;
+            if (!usernamePattern.test(student.username)) {
+                alert("Username should contain only letters.");
+                return;
+            }
+
+            let passwordPattern = /^(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,11}$/;
+            if (!passwordPattern.test(student.password)) {
+                alert("Password must be 6-11 characters long, include at least one number, and at least one special character.");
+                return;
+            }
+
+            let phonePattern = /^\d{10}$/;
+            if (!phonePattern.test(student.phone)) {
+                alert("Phone Number should contain 10-digits only.");
+                return;
+            }
+
+            let emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            if (!emailPattern.test(student.email)) {
+                alert("Please enter a valid email address (e.g., example@domain.com).");
+                return;
+            }
+
+            else {
+                console.log(student);
+                // Redirect automatically if required
+                // window.location.href = "SelectDomain.html";
+            }
         }
     </script>
 
