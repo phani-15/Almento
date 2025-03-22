@@ -201,8 +201,8 @@
 
                 <!-- Right Column -->
                 <div class="form-group">
-                    <input type="text" id="phone" placeholder="Phone Number" required pattern="\d{10}" title="Phone number should be 10 digits.">
-                    <input type="email" id="email" placeholder="Email" required pattern="^[a-zA-Z0-9._%+-]+@abc\.com$" title="Email must be in the format 'example@abc.com'">
+                    <input type="tel" id="phone" placeholder="Phone number" maxlength="10" oninput="validatePhoneNumber(this)" required>
+                    <input type="email" id="email" placeholder="Email" required >
                     <input type="text" id="domain" placeholder="Domain" required>
                     <input type="text" id="experience" placeholder="Experience" required>
                 </div>
@@ -220,6 +220,10 @@
     </div>
 
     <script>
+        function validatePhoneNumber(input) {
+            // Remove any non-numeric characters
+            input.value = input.value.replace(/\D/g, '').slice(0, 10);
+        }
         function validateAndRedirect() {
             let student = {
                 name: document.getElementById("name").value.trim(),
