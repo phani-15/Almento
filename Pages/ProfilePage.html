@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Card</title>
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #1a1a1a; /* Dark background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Profile Card */
+        .profile-card {
+            width: 350px;
+            height: 600px; /* Increased height */
+            background-color: #0c0614; /* Dark purple shade */
+            padding: 30px;
+            border-radius: 15px;
+            border: 2px solid #c8a94b; /* Goldish border */
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        /* Perfect Circular DP */
+        .profile-pic {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%; /* Perfect circle */
+            border: 3px solid white;
+            object-fit: cover; /* Ensures the image scales correctly */
+            display: block;
+            margin: auto; /* Centering */
+            background-color: #333; /* Placeholder background if no image */
+        }
+
+        /* Edit Icon */
+        .edit-icon {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            cursor: pointer;
+            color: white;
+            font-size: 18px;
+            border: 1px solid white;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        /* Text Styles */
+        .profile-info {
+            font-size: 20px;
+            margin: 14px 0;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px gray;
+        }
+
+        .email {
+            font-size: 18px;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px gray;
+        }
+
+        /* Horizontal Line */
+        .divider {
+            width: 80%;
+            margin: 8px auto;
+            border-bottom: 1px solid gray;
+        }
+
+        /* About Section */
+        .about-section {
+            text-align: left;
+            margin-top: 50px; /* Moved further down */
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .about-box {
+            width: 100%;
+            height: 150px; /* Increased size */
+            background-color: transparent;
+            border: 1px solid gray;
+            border-radius: 5px;
+            color: white;
+            padding: 10px;
+            font-size: 16px;
+            resize: none;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="profile-card">
+        <!-- Edit Icon -->
+        <div class="edit-icon">✏️</div>
+
+        <!-- Display Picture -->
+        <img src="no-dp_16.webp" alt="Profile Picture" class="profile-pic">
+
+        <!-- Profile Details -->
+        <div class="profile-info">name</div>
+        <div class="divider"></div>
+
+        <div class="profile-info">course</div>
+        <div class="divider"></div>
+
+        <div class="profile-info">year</div>
+        <div class="divider"></div>
+
+        <div class="email">name@gmail.com</div>
+        <div class="divider"></div>
+
+        <!-- About Section -->
+        <div class="about-section">About:</div>
+        <textarea class="about-box">I am Sirisha Neelam. I am a student in JNTU GV</textarea>
+    </div>
+
+</body>
+</html>
