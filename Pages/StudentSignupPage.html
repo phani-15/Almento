@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -87,7 +88,7 @@
             padding: 12px;
             width: 90%;
             margin: 10px auto;
-            border: 2px solid rgba(255,255,255,0.3);
+            border: 2px solid rgba(255, 255, 255, 0.3);
             border-radius: 25px;
             outline: none;
             background-color: rgba(255, 255, 255, 0.15);
@@ -166,6 +167,7 @@
         }
     </style>
 </head>
+
 <body>
 
     <!-- Logo -->
@@ -187,7 +189,8 @@
 
                 <!-- Right Column -->
                 <div class="form-group">
-                    <input type="tel" id="phone" placeholder="Phone number" maxlength="10" oninput="validatePhoneNumber(this)" required>
+                    <input type="tel" id="phone" placeholder="Phone number" maxlength="10"
+                        oninput="validatePhoneNumber(this)" required>
                     <input type="email" id="email" placeholder="Email">
                 </div>
             </div>
@@ -202,14 +205,23 @@
             // Remove any non-numeric characters
             input.value = input.value.replace(/\D/g, '').slice(0, 10);
         }
+
+        var student = {
+            name: null,
+            username: null,
+            password: null,
+            phone: null,
+            email: null
+        }
+        
         function validateAndRedirect() {
-            let student = {
-                name: document.getElementById("name").value.trim(),
-                username: document.getElementById("username").value.trim(),
-                password: document.getElementById("password").value.trim(),
-                phone: document.getElementById("phone").value.trim(),
-                email: document.getElementById("email").value.trim()
-            };
+
+            student.name= document.getElementById("name").value.trim()
+            student.username= document.getElementById("username").value.trim()
+            student.password = document.getElementById("password").value.trim()
+            student.phone = document.getElementById("phone").value.trim()
+            student.email = document.getElementById("email").value.trim()
+
 
             if (!student.name || !student.username || !student.password || !student.phone || !student.email) {
                 alert("Please fill in all fields.");
@@ -255,4 +267,5 @@
     </script>
 
 </body>
+
 </html>
