@@ -184,7 +184,7 @@
 <body>
 
     <!-- Logo -->
-    <a href="LoginPage.html"><img src="../images/Logo.png" alt="Mentor Register Logo" class="logo"></a>
+    <a href="../Pages/Student-MentorPage.html"><img src="../images/Logo.png" alt="Mentor Register Logo" class="logo"></a>
 
     <div class="container">
         <h2>MENTOR REGISTER</h2>
@@ -259,7 +259,7 @@
                 return;
             }
 
-            let usernamePattern = /^[A-Za-z]+$/;
+            let usernamePattern = /^[A-Za-z\s]+$/;
             if (!usernamePattern.test(student.username)) {
                 alert("Username should contain only letters.");
                 return;

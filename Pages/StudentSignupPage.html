@@ -171,7 +171,7 @@
 <body>
 
     <!-- Logo -->
-    <a href="../Pages/LoginPage.html"><img src="../images/Logo2.png" alt="Student Register Logo" class="logo"></a>
+    <a href="../Pages/Student-MentorPage.html"><img src="../images/Logo2.png" alt="Student Register Logo" class="logo"></a>
 
     <div class="container">
         <h2>STUDENT REGISTER</h2>
@@ -228,13 +228,13 @@
                 return;
             }
 
-            let namePattern = /^[A-Za-z]+$/;
+            let namePattern = /^[A-Za-z\s]+$/;
             if (!namePattern.test(student.name)) {
                 alert("Name should contain only letters and spaces.");
                 return;
             }
 
-            let usernamePattern = /^[A-Za-z]+$/;
+            let usernamePattern = /^[A-Za-z\s]+$/;
             if (!usernamePattern.test(student.username)) {
                 alert("Username should contain only letters.");
                 return;
