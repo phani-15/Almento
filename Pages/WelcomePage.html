@@ -6,15 +6,38 @@
     <title>Welcome to ALMENTO</title>
     <link rel="stylesheet" href="../Styles/Style.css">
     <style>
- 
-        .logo.animated {
-            width: 50px;
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            transform: none;
-            transition: transform 0.5s ease, width 0.5s ease, position 0.5s ease, top 0.5s ease, left 0.5s ease;
+        /* Logo Glowing Pulse Effect (Kept the same) */
+        @keyframes pulse {
+            0% { transform: scale(1); filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5)); }
+            50% { transform: scale(1.05); filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.8)); }
+            100% { transform: scale(1); filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5)); }
         }
+
+        .logo {
+            animation: pulse 2s infinite ease-in-out;
+        }
+
+        /* Bottom-to-Top Animation for Welcome Text */
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .welcome-text {
+            animation: slideUp 1s ease-out;
+        }
+
+        /* Smooth Scaling Effect for Button */
+        .continue-btn {
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        .continue-btn:hover {
+            transform: scale(1.1);
+            background-color: #ff6600; /* Keeps it stylish */
+            color: white;
+        }
+
     </style>
 </head>
 <body>
@@ -29,7 +52,8 @@
     <div class="main-container">
         <h1 class="welcome-text">Welcome To ALMENTO</h1>
         <a href="./LoginPage.html">
-            <button class="continue-btn" id="continueBtn">Continue</button></a>
+            <button class="continue-btn" id="continueBtn">Continue</button>
+        </a>
     </div>
 
     <!-- <script src="../JS Files/Animate.js"></script> -->
