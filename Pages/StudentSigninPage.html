@@ -142,15 +142,15 @@
 
             let phoneOrUsername = user.username;
             let phonePattern = /^\d{10}$/;
-            let usernamePattern = /^[A-Za-z]+$/;
+            let usernamePattern = /^[A-Za-z\s]+$/;
             if (!phonePattern.test(phoneOrUsername) && !usernamePattern.test(phoneOrUsername)) {
                 alert("Enter a valid Username (letters only) or a 10-digit Phone Number.");
                 return;
             }
 
-            let passwordPattern = /^(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,11}$/;
+            let passwordPattern = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&]).{6,11}$/;
             if (!passwordPattern.test(user.password)) {
-                alert("Password must be 6-11 characters long, include at least one number, and at least one special character.");
+                alert("Password must be 6-11 characters long and include at least one letter, one number, and one special character.");
                 return;
             }
 
