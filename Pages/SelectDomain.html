@@ -257,14 +257,26 @@
             <h3 style="color:white" ;>Search your interested Domain here</h3>
             <div class="search-box">
                 <span class="icon">🔍</span>
-                <select background="#FFD700">
-                    <option value="" disabled selected>Select a domain</option>
-                    <option value="softwareengineer">Software Engineeer</option>
-                    <option value="fullstackdevelopment">Full Stack Development</option>
-                    <option value="cybersecurity">Cyber Security</option>
-                    <option value="iot">Iot</option>
-                    <option value="dataanalysis">Data Analysis</option>
+                
+
+                
+                <select background="#FFD700" id="career-options" onchange="redirectToPage()">
+                    <option value="" disabled selected>Select an option</option>
+                    <option value="../Pages/AlumniList.html">Software Engineer</option>
+                    <option value="../Pages/AlumniList.html">Full Stack Development</option>
+                    <option value="../Pages/AlumniList.html">Cyber Security</option>
+                    <option value="../Pages/AlumniList.html">IoT</option>
+                    <option value="../Pages/AlumniList.html">Data Analysis</option>
                 </select>
+
+                <script>
+                    function redirectToPage() {
+                        let selectedValue = document.getElementById("career-options").value;
+                        if (selectedValue) {
+                            window.location.href = selectedValue; // Redirect to the selected page
+                        }
+                    }
+                </script>
 
             </div>
         </div>
