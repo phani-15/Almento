@@ -170,4 +170,4 @@ function findChat() {
 }
 
 // Open the first chat by default
-openChat(0);
+// openChat(0);
