@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - ALMENTO</title>
+    <link rel="stylesheet" href="../Styles/Style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0c021c;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            position: relative;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .back-arrow {
+            position: absolute;
+            top: 20px;
+            left: 30px;
+            font-size: 28px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.2s ease-in-out, color 0.3s;
+        }
+
+        .back-arrow:hover {
+            transform: scale(1.2);
+        }
+
+        .contact-container {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(15px);
+            width: 70%;
+            max-width: 700px;
+            flex-wrap: wrap;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .contact-form {
+            width: 100%;
+            max-width: 350px;
+        }
+
+        .contact-form h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 14px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 10px;
+            background: rgba(50, 50, 50, 0.8);
+            color: white;
+            font-size: 16px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+        }
+
+        .error {
+            color: #ff4500;
+            font-size: 14px;
+        }
+
+        .submit-btn {
+            background: #ff6600;
+            color: white;
+            border: none;
+            padding: 12px 18px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 10px;
+            transition: 0.3s;
+            width: 100%;
+            box-shadow: 0 0 10px rgba(255, 102, 0, 0.6);
+        }
+
+        .submit-btn:hover {
+            background: #ff4500;
+        }
+
+        .logo-container img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .logo-container img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 25px rgba(255, 255, 255, 1);
+        }
+
+        @media (max-width: 768px) {
+            .contact-container {
+                flex-direction: column;
+                gap: 30px;
+                padding: 30px;
+                width: 90%;
+            }
+
+            .contact-form h2 {
+                font-size: 24px;
+            }
+
+            .logo-container img {
+                width: 150px;
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="../Pages/WelcomePage.html" class="back-arrow">&#8592;</a>
+
+    <div class="contact-container">
+        <form class="contact-form" id="contactForm">
+            <h2>Contact Us</h2>
+            
+            <input type="text" id="name" name="name" placeholder="Your Name" required>
+            <p class="error" id="nameError"></p>
+
+            <input type="email" id="email" name="email" placeholder="Your Email" required>
+            <p class="error" id="emailError"></p>
+
+            <textarea name="message" id="message" rows="5" placeholder="Your Message" required></textarea>
+            <p class="error" id="messageError"></p>
+
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+
+        <div class="logo-container">
+            <img src="../images/Logo2.png" alt="ALMENTO Logo">
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            let isValid = true;
+
+            let nameInput = document.getElementById("name");
+            let nameError = document.getElementById("nameError");
+            let namePattern = /^[A-Za-z\s]+$/;
+            if (!namePattern.test(nameInput.value.trim())) {
+                nameError.textContent = "Name can only contain letters and spaces.";
+                isValid = false;
+            } else {
+                nameError.textContent = "";
+            }
+
+            let emailInput = document.getElementById("email");
+            let emailError = document.getElementById("emailError");
+            let emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            if (!emailPattern.test(emailInput.value.trim())) {
+                emailError.textContent = "Enter a valid email.";
+                isValid = false;
+            } else {
+                emailError.textContent = "";
+            }
+
+            let messageInput = document.getElementById("message");
+            let messageError = document.getElementById("messageError");
+            if (messageInput.value.trim() === "") {
+                messageError.textContent = "Message cannot be empty.";
+                isValid = false;
+            } else {
+                messageError.textContent = "";
+            }
+
+            if (!isValid) {
+                event.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>

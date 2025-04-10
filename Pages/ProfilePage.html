@@ -100,13 +100,30 @@
             resize: none;
         }
 
+        .back-arrow {
+            position: absolute;
+            top: 20px;
+            left: 30px;
+            font-size: 28px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.2s ease-in-out, color 0.3s;
+        }
+
+        .back-arrow:hover {
+            transform: scale(1.2);
+            color: white;
+        }
+
     </style>
 </head>
 <body>
 
     <div class="profile-card">
+        <a href="../Pages/SelectDomain.html" class="back-arrow">&#8592;</a>
         <!-- Edit Icon -->
-        <div class="edit-icon">✏️</div>
+        <a href="../Pages/ProfileEditPage.html" class="edit-icon">✏️</a>
 
         <!-- Display Picture -->
         <img src="no-dp_16.webp" alt="Profile Picture" class="profile-pic">

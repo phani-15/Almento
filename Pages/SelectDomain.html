@@ -16,6 +16,8 @@
         .search-section {
             margin: 0px auto;
              width: 100%;
+             margin-left:95px;
+             margin-top:-20px;
         }
         .header {
             display: flex;
@@ -32,26 +34,34 @@
              align-items: center; 
              justify-content: space-between; 
              margin: 20px 0;
+            
         }
         .section img {
-            width: 40%; 
-            border-radius: 5px; 
+            width: 30%; 
+            border-radius: 8px; 
             border: 1px solid gold;
+            margin-left:70px;
+            margin-top:50px;
         }
         .text-content {
              width: 50%;
               text-align: left;
-              font-size: 30px; 
+              font-size: 200px; 
+              margin-left: 85px;
          }
         .search-box {
             display: flex;
             align-content:center;
-            background:gold  ; 
+            background: #dbd444;
             padding: 5px;
-            border-radius:20px; 
+            border-radius:30px; 
             width: 100%;
             position:center;
             margin: 20px auto;
+            left:44%;
+           margin-bottom:20px;
+           padding-top: 1px;
+           
             
         }
         .search-box select {
@@ -59,16 +69,18 @@
             border: none;
             outline: none;
             color: black;
-            font-size: 16px;
+            font-size: 18px;
             padding: 5px;
             appearance: none;
             width: 70%;
+            left:44%;
+            bottom:32%;
         }
         .search-box select option {
             color: black;
         }
         .icon {
-            margin-right: 10px;
+            margin-right: 12px;
         }
 
         .search-box input {
@@ -78,15 +90,14 @@
             flex-grow: 1; 
             padding: 5px;
             position:relative;
-
         }
         .image-section {
             position: relative;
              text-align: center;
-             width:100%;
+             width:80%;
         }
         .image-section img {
-            width: 100%;
+            width: 70%;
              border: none;
         }
         .overlay-text {
@@ -101,16 +112,19 @@
 
          .logo img {
             height: 45px;
+            margin-left:-100px;
         }
         .icons {
             display: flex;
-            align-items: center;
-            gap: 15px;
+            align-items:center;
+            gap:0px;
         }
         .icons img {
              height: 40px;
             cursor: pointer;
             background-color: #0D021F;
+            margin-right:150px;
+            margin-left:-125px;
         }
         .container {
             width: 100%;
@@ -122,8 +136,9 @@
            display: flex;
             align-items: center;
             justify-content: space-between;
-            margin: 20px 0;
+            margin: 50px 0;
             position: relative;
+            margin-right:70px;
         }
         .section4 {
            display: flex;
@@ -131,24 +146,23 @@
             justify-content: space-between;
             margin: 20px 0;
             position: relative;
+            
         } 
         .overlay-text1{
             position:absolute;
-           left:50%;
-           bottom:30%;
-      
+           left:44%;
+           bottom:34%;
             transform: translateY(-10px);
-            color: gold; 
-            font-size: 25px; 
+            color:gold; 
+            font-size: 33px; 
             text-align:right;
             transform: translate(-50%, -50%);
             padding: 50px;
             margin: auto;
         }
         .section1 img {
-            width:100%;
+            width:95%;
             border-radius:5px;
-
             opacity: 0.4;
         }
         .section4 img{
@@ -160,22 +174,23 @@
         .overlay-text {
              position: absolute;
              top: 50%;
-             left: 70%;
+             left: 67%;
              transform: translate(-50%, -50%);
-             font-size: 25px;
+             font-size: 28px;
              color: gold;
           
-              padding: 20px;
+              padding: 5px;
               border-radius: 5px;
         }
         .text-content {
              width: 50%;
-              font-size: 30px;
+              font-size: 36px;
               line-height: 1.6;
         }
         .overlay-box {
              position: relative;
              display: inline-block;
+            
         }
         
         .quote::before, 
@@ -195,8 +210,8 @@
         }
 
         .quote::after {
-            bottom:100;
-            right: 110;
+            bottom:50;
+            right: 10;
             border-left: none;
             border-top: none;
         }
@@ -205,16 +220,16 @@
 
 <div class="header">
 <div class="logo">
-    <img src="../images/Logo.png" alt="Logo">
+    <img src="../images/Logo2.png" alt="Logo">
 </div>
 <div class="icons">
-    <img src="chatbox.jpg" alt="Chat">
-    <img src="../images/UserIcon2.png" alt="Profile">
+    <a href="../Pages/ChatBox.html"><img src="../images/chat.jpeg" alt="Chat"></a>
+    <a href="../Pages/ProfilePage.html"><img src="../images/UserIcon2.png " alt="Profile"></a>
 </div>
 </div>
 <div class="container">
 <div class="section1">
-    <img src="../images/picture1.jpeg " alt="Study Image">
+    <img src="../images/picture1.jpeg" alt="Study Image">
     <div class="overlay-text">
         <div class="quote" >Study hard for your future and never stop for anyone</div>
 
@@ -224,11 +239,11 @@
     <div class="container">
         <div class="section">
             <img src="../images/picture2a.jpeg " alt="Teamwork">
-            <div class="text-content">We help you connect with working professional for your career guidance . they will guide you to reach your goal
+            <div class="text-content">We help you connect with working professional for your career guidance . They will guide you to reach your goal.
             </div>
         </div>
         <div class="section">
-            <div class="text-content">Our Guiders help you in your carer development to become a better version of you.We are here to help you.
+            <div class="text-content">Our Guiders help you in your career development to become a better version of you.We are here to help you.
                 </div>
             <img src="../images/picture3a.jpeg" alt="Success">
         </div>
@@ -239,26 +254,34 @@
         <div class="overlay-text1">
     
         <div class="search-section">
-            <h2 style="color: gold" ;>Search your interested Domain here</h2>
+            <h3 style="color:white" ;>Search your interested Domain here</h3>
             <div class="search-box">
                 <span class="icon">🔍</span>
-                <select background="gold" id="SelectedDomain" onchange="Changed()">
-                    <option value="">Select a domain</option>
-                    <option value="softwareengineer">Software Engineeer</option>
-                    <option value="fullstackdevelopment">Full Stack Development</option>
-                    <option value="cybersecurity">Cyber Security</option>
-                    <option value="iot">Iot</option>
-                    <option value="dataanalysis">Data Analysis</option>
+                
+
+                
+                <select background="#FFD700" id="career-options" onchange="redirectToPage()">
+                    <option value="" disabled selected>Select an option</option>
+                    <option value="../Pages/AlumniList.html">Software Engineer</option>
+                    <option value="../Pages/AlumniList.html">Full Stack Development</option>
+                    <option value="../Pages/AlumniList.html">Cyber Security</option>
+                    <option value="../Pages/AlumniList.html">IoT</option>
+                    <option value="../Pages/AlumniList.html">Data Analysis</option>
                 </select>
-    
+
+                <script>
+                    function redirectToPage() {
+                        let selectedValue = document.getElementById("career-options").value;
+                        if (selectedValue) {
+                            window.location.href = selectedValue; // Redirect to the selected page
+                        }
+                    }
+                </script>
+
             </div>
         </div>
         </div>
     </div>
-    <script>
-        function Changed(){
-            console.log(document.getElementById("SelectedDomain").value)
-        }
-    </script>
+    
 </body>
 </html>

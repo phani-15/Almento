@@ -127,7 +127,7 @@
         </div>
     </div>
 
-    <a href="LoginPage.html"><img src="../images/Logo.png" alt="Almento Logo" class="logo"></a>
+    <a href="../Pages/Student-MentorPage.html"><img src="../images/Logo.png" alt="Almento Logo" class="logo"></a>
 
     <script>
         function logCredentials() {
@@ -148,14 +148,15 @@
                 return;
             }
 
-            let passwordPattern = /^(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,11}$/;
+            let passwordPattern = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&]).{6,11}$/;
             if (!passwordPattern.test(user.password)) {
-                alert("Password must be 6-11 characters long, include at least one number, and at least one special character.");
+                alert("Password must be 6-11 characters long and include at least one letter, one number, and one special character.");
                 return;
             }
 
             else {
                 console.log(user);
+                window.location.href = "SelectDomain.html";
                 // You can store this object or send it to a backend for processing.
             }
         }

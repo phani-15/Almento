@@ -171,7 +171,7 @@
 <body>
 
     <!-- Logo -->
-    <a href="../Pages/LoginPage.html"><img src="../images/Logo2.png" alt="Student Register Logo" class="logo"></a>
+    <a href="../Pages/Student-MentorPage.html"><img src="../images/Logo2.png" alt="Student Register Logo" class="logo"></a>
 
     <div class="container">
         <h2>STUDENT REGISTER</h2>
@@ -228,21 +228,21 @@
                 return;
             }
 
-            let namePattern = /^[A-Za-z]+$/;
+            let namePattern = /^[A-Za-z\s]+$/;
             if (!namePattern.test(student.name)) {
                 alert("Name should contain only letters and spaces.");
                 return;
             }
 
-            let usernamePattern = /^[A-Za-z]+$/;
+            let usernamePattern = /^[A-Za-z\s]+$/;
             if (!usernamePattern.test(student.username)) {
                 alert("Username should contain only letters.");
                 return;
             }
 
-            let passwordPattern = /^(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,11}$/;
+            let passwordPattern = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&]).{6,11}$/;
             if (!passwordPattern.test(student.password)) {
-                alert("Password must be 6-11 characters long, include at least one number, and at least one special character.");
+                alert("Password must be 6-11 characters long and include at least one letter, one number, and one special character.");
                 return;
             }
 
@@ -261,7 +261,7 @@
             else {
                 console.log(student);
                 // Redirect automatically if required
-                // window.location.href = "SelectDomain.html";
+                 window.location.href = "../Pages/SelectDomain.html";
             }
         }
     </script>
